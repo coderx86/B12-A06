@@ -48,7 +48,7 @@
             <button class="btn bg-yellow-400 hover:bg-yellow-500 text-green-700 border-none rounded-full font-semibold px-6">Plant a Tree</button>
         </div>
     </nav>
-    
+
         <!-- Hero Section -->
     <div class="relative overflow-hidden min-h-[383px] flex items-center justify-center p-8 bg-gradient-to-b from-[#cff0dc] to-green-50">
         <img class="absolute left-0 top-0 h-full object-cover" src="./assets/hero-leaf1.png" alt="">
@@ -58,6 +58,74 @@
             <h1 class="text-3xl md:text-5xl font-bold mb-4 text-gray-800">Plant a tree, grow a future</h1>
             <p class="text-lg md:text-[1.125rem] text-gray-800 opacity-80 mb-8 mx-auto max-w-2xl">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
             <button class="btn bg-yellow-400 hover:bg-yellow-500 text-green-700 border-none rounded-full font-semibold px-8 text-base">Get Involved</button>
+        </div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="w-[90%] mx-auto px-4">
+        <!-- Trees Section -->
+        <div class="py-16">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">Choose Your Trees</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-[250px_1fr_250px] gap-4 mt-8">
+                <!-- Categories Sidebar -->
+                <div class="rounded-lg h-fit w-full md:static lg:sticky lg:top-[100px]" >
+                    <h3 class="text-xl font-semibold mb-4 text-black">Categories</h3>
+                    <button  class="w-full text-left p-2 md:p-3 rounded bg-green-700 text-white font-medium mb-2 transition-colors hover:bg-gray-100 dark:hover:text-gray-800">All Trees</button>
+                    <!-- JS will append category buttons here -->
+                </div>
+                <!-- Products Grid -->
+                <div class="flex flex-col w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-3" >
+                        <!-- JS will append product cards here -->
+                    </div>
+                </div>
+                <!-- Cart Sidebar -->
+                <div class="bg-white rounded-3xl p-4 h-fit sticky top-[100px] md:static lg:sticky w-full shadow-sm" >
+                    <h3 class="text-2xl font-bold mb-6 text-black">Your Cart</h3>
+                    <!-- Cart Items Container -->
+                    <div  class="flex flex-col gap-3">
+                        <!-- JS will append cart items here -->
+                    </div>
+                    
+                    <!-- Cart Total Section (Hidden by default until items added) -->
+                    <div  class="hidden mt-4">
+                        <div class="h-[1px] bg-gray-200 w-full mb-4"></div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-medium text-gray-800">Total:</span>
+                            <span  class="text-xl font-bold text-gray-800">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal (Hidden by default) -->
+        <dialog  class="modal">
+            <div class="modal-box bg-white max-w-[500px] w-[90%] p-0 overflow-hidden" >
+               <!-- JS injects content here -->
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+
+        <!-- About Campaign -->
+        <div class="py-16 px-4 md:px-8">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-gray-800">About The Campaign</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-[1000px] mx-auto">
+                <img class="w-full max-w-[500px] rounded-xl mx-auto md:mx-0" src="./assets/about.png" alt="About Campaign">
+                <div class="text-gray-800 text-base">
+                    <p class="opacity-80 mb-6 leading-relaxed">
+                        Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <ul class="opacity-80 space-y-2 list-disc">
+                        <li> Restoration of natural habitats</li>
+                        <li> Improvement of air quality</li>
+                        <li> Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </body>
