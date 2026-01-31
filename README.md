@@ -56,3 +56,88 @@ const add = function(a, b) {
 
 // ES6 Arrow Function
 const add = (a, b) => a + b;
+```
+## 4. How does destructuring assignment work in ES6?
+
+In my code, destructuring assignment allows me to unpack values from arrays or properties from objects into distinct variables concisely. Instead of accessing properties one by one using dot notation, I can extract exactly what I need in a single line.
+
+For example, looking at my `renderPlants` function, I am currently accessing plant properties like this:
+
+```javascript
+// Current approach in my code (Dot Notation)
+const renderPlants = (plants) => {
+  el.cards.innerHTML = plants.map((plant, index) => `
+    <h3>${plant.name}</h3>
+    <p>$${plant.price}</p>
+  `).join("");
+};
+
+```
+
+If I apply **Destructuring**, I can extract the `name`, `price`, `image`, and `category` directly from the `plant` object parameter. Here is how I would do it:
+
+```javascript
+// How I use Destructuring
+const renderPlants = (plants) => {
+  el.cards.innerHTML = plants.map((plant, index) => {
+    // HERE: I am destructuring the object
+    const { name, price, image, category, description } = plant;
+
+    // Now I can use 'name' instead of 'plant.name'
+    return `
+      <div data-category="${category}">
+         <img src="${image}" alt="${name}">
+         <h3>${name}</h3>
+         <p>$${price}</p>
+      </div>
+    `;
+  }).join("");
+};
+
+```
+
+By doing this, I make my template literals cleaner and easier to read because I don't have to repeatedly type `plant.` before every variable.
+
+---
+
+## 5. Explain template literals in ES6. How are they different from string concatenation?
+
+Template literals are string literals allowing embedded expressions. They are defined using backticks (```) instead of single or double quotes.
+
+**Key Differences from String Concatenation:**
+
+1. **Interpolation (`${...}`):**
+* **Concatenation:** You must break the string and use the `+` operator (e.g., `'Hello ' + name + '!'`).
+* **Template Literals:** You can inject variables or expressions directly inside the string using `${variable}`.
+
+
+2. **Multiline Strings:**
+* **Concatenation:** You must use newline characters (`\n`) and concatenation to span multiple lines.
+* **Template Literals:** You can simply hit "Enter" in your code, and the line breaks are preserved in the string. This is extremely useful for generating HTML templates.
+
+
+
+**Example from the Assignment:**
+The provided code relies heavily on template literals to render the plant cards dynamically:
+
+```javascript
+// Template Literal (Clean & readable)
+`
+  <div class="bg-white rounded-lg...">
+     <h3>${plant.name}</h3>
+     <p>${plant.description}</p>
+  </div>
+`
+
+```
+
+If this were done with **concatenation**, it would look messy:
+
+```javascript
+// Concatenation (Hard to read)
+'<div class="bg-white rounded-lg...">' +
+   '<h3>' + plant.name + '</h3>' +
+   '<p>' + plant.description + '</p>' +
+'</div>'
+
+```
